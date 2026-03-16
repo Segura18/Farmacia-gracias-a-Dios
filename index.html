@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farmacia gracias a Dios — Tu salud es nuestra prioridad</title>
+
+  <!-- ═══════════════════════════════════════
+       CDNS: Bootstrap 5 + Tailwind CSS
+  ═══════════════════════════════════════ -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Playfair Display + DM Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0B1F3A',
+            azure: '#1A5CFF',
+            'azure-light': '#4A7FFF',
+            ice: '#EAF0FF',
+            pearl: '#F8FAFF',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'serif'],
+            body: ['"DM Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-body bg-pearl text-navy">
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR — Sticky, con logo y menú
+  ═══════════════════════════════════════ -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom">
+    <div class="container">
+
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+        <div class="logo-badge">
+          <img src="farmacia-assets/logo.png.jpeg" alt="Farmacia gracias a Dios Logo" class="logo-img" />
+        </div>
+        <span class="brand-name">Farmacias gracias a <strong>Dios</strong></span>
+      </a>
+
+      <!-- Toggler (mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu links -->
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link nav-pill" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link nav-pill" href="#medicamentos">Medicamentos</a></li>
+          <li class="nav-item"><a class="nav-link nav-pill" href="#equipo">Nuestro Equipo</a></li>
+          <li class="nav-item"><a class="nav-link nav-pill" href="#opiniones">Opiniones</a></li>
+          <li class="nav-item"><a class="nav-link nav-pill" href="#registro">Registro</a></li>
+          <li class="nav-item ms-2">
+            <a class="btn btn-nav-cta" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════
+       HERO SECTION — Imagen de fondo + CTA
+  ═══════════════════════════════════════ -->
+  <section id="inicio" class="hero-section" style="background-image: url('farmacia-assets/background.jpg.jpeg');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="row align-items-center min-vh-100">
+        <div class="col-lg-7">
+          <span class="hero-badge animate-fade-up">🏥 Atención personalizada · 24/7</span>
+          <h1 class="hero-title animate-fade-up delay-1">
+            Tu salud es<br />
+            <em>nuestra prioridad</em>
+          </h1>
+          <p class="hero-sub animate-fade-up delay-2">
+            Medicamentos de calidad, asesoría farmacéutica profesional y atención cálida para toda tu familia. Más de 15 años cuidando tu bienestar.
+          </p>
+          <div class="d-flex gap-3 flex-wrap animate-fade-up delay-3">
+            <a href="#medicamentos" class="btn btn-hero-primary">
+              <i class="bi bi-capsule me-2"></i>Ver Medicamentos
+            </a>
+            <a href="#contacto" class="btn btn-hero-ghost">
+              <i class="bi bi-telephone me-2"></i>Llámanos
+            </a>
+          </div>
+
+          <!-- Stats row -->
+          <div class="hero-stats animate-fade-up delay-4">
+            <div class="stat-item">
+              <span class="stat-num">15+</span>
+              <span class="stat-label">Años de servicio</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">5000+</span>
+              <span class="stat-label">Clientes satisfechos</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">800+</span>
+              <span class="stat-label">Productos disponibles</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-content">
+      <!-- tu texto actual -->
+    </div>
+   <div class="hero-image">
+      <img src="farmacia-assets/chica-farmacia.jpg.jpeg" alt="Farmacia Gracias a Dios">
+   </div>
+
+  
+
+    <!-- Scroll indicator -->
+    <a href="#medicamentos" class="scroll-indicator">
+      <i class="bi bi-chevron-double-down"></i>
+    </a>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECCIÓN MEDICAMENTOS — Tarjetas en grid
+  ═══════════════════════════════════════ -->
+  <section id="medicamentos" class="section-pad bg-pearl">
+    <div class="container">
+
+      <!-- Section header -->
+      <div class="section-header text-center mb-5">
+        <span class="section-tag">Catálogo</span>
+        <h2 class="section-title">Nuestros <em>Medicamentos</em></h2>
+        <p class="section-sub">Contamos con los mejores productos farmacéuticos para tu salud y bienestar.</p>
+      </div>
+
+      <!-- Grid de medicamentos -->
+      <div class="row g-4">
+
+        <!-- Tarjeta 1 -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="med-card">
+            <div class="med-img-wrap">
+              <img src="farmacia-assets/medicamento1.jpg.jpeg" alt="Medicamento 1" class="med-img" />
+              <span class="med-badge">Bestseller</span>
+            </div>
+            <div class="med-body">
+              <span class="med-cat">Analgésicos</span>
+              <h5 class="med-name">Ibuprofeno 600mg</h5>
+              <p class="med-desc">Antiinflamatorio y analgésico de amplio espectro. Ideal para dolores musculares, fiebre y procesos inflamatorios.</p>
+              <button class="btn btn-consultar" data-bs-toggle="modal" data-bs-target="#consultaModal">
+                <i class="bi bi-chat-dots me-2"></i>Consultar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="med-card">
+            <div class="med-img-wrap">
+              <img src="farmacia-assets/medicamento2.jpg.jpeg" alt="Medicamento 2" class="med-img" />
+              <span class="med-badge badge-blue">Disponible</span>
+            </div>
+            <div class="med-body">
+              <span class="med-cat">Vitaminas</span>
+              <h5 class="med-name">Vitamina C 1000mg</h5>
+              <p class="med-desc">Potente antioxidante que fortalece el sistema inmune y contribuye a la producción de colágeno en el organismo.</p>
+              <button class="btn btn-consultar" data-bs-toggle="modal" data-bs-target="#consultaModal">
+                <i class="bi bi-chat-dots me-2"></i>Consultar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="med-card">
+            <div class="med-img-wrap">
+              <img src="farmacia-assets/medicamento3.jpg.jpeg" alt="Medicamento 3" class="med-img" />
+            </div>
+            <div class="med-body">
+              <span class="med-cat">Antibióticos</span>
+              <h5 class="med-name">Amoxicilina 500mg</h5>
+              <p class="med-desc">Antibiótico de amplio espectro para infecciones bacterianas. Requiere prescripción médica para su dispensación.</p>
+              <button class="btn btn-consultar" data-bs-toggle="modal" data-bs-target="#consultaModal">
+                <i class="bi bi-chat-dots me-2"></i>Consultar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="med-card">
+            <div class="med-img-wrap">
+              <img src="farmacia-assets/medicamento4.jpg.jpeg" alt="Medicamento 4" class="med-img" />
+              <span class="med-badge badge-green">Nuevo</span>
+            </div>
+            <div class="med-body">
+              <span class="med-cat">Cardio</span>
+              <h5 class="med-name">Omega-3 Plus</h5>
+              <p class="med-desc">Suplemento de ácidos grasos esenciales EPA y DHA para la salud cardiovascular y función cerebral óptima.</p>
+              <button class="btn btn-consultar" data-bs-toggle="modal" data-bs-target="#consultaModal">
+                <i class="bi bi-chat-dots me-2"></i>Consultar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 5 -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="med-card">
+            <div class="med-img-wrap">
+              <img src="farmacia-assets/medicamento5.jpg.jpeg" alt="Medicamento 5" class="med-img" />
+            </div>
+            <div class="med-body">
+              <span class="med-cat">Dermatología</span>
+              <h5 class="med-name">Crema Hidratante SPF 50</h5>
+              <p class="med-desc">Protección solar de alta eficacia combinada con hidratación profunda para piel sensible y fotodañada.</p>
+              <button class="btn btn-consultar" data-bs-toggle="modal" data-bs-target="#consultaModal">
+                <i class="bi bi-chat-dots me-2"></i>Consultar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 6 -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="med-card">
+            <div class="med-img-wrap">
+              <img src="farmacia-assets/medicamento6.jpg.jpeg" alt="Medicamento 6" class="med-img" />
+              <span class="med-badge badge-blue">Popular</span>
+            </div>
+            <div class="med-body">
+              <span class="med-cat">Digestivo</span>
+              <h5 class="med-name">Probióticos Multi</h5>
+              <p class="med-desc">Complejo de bacterias beneficiosas para equilibrar la microbiota intestinal y mejorar la digestión.</p>
+              <button class="btn btn-consultar" data-bs-toggle="modal" data-bs-target="#consultaModal">
+                <i class="bi bi-chat-dots me-2"></i>Consultar
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECCIÓN NUESTRO EQUIPO
+  ═══════════════════════════════════════ -->
+  <section id="equipo" class="section-pad team-section">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag">Profesionales</span>
+        <h2 class="section-title">Nuestro <em>Equipo</em></h2>
+        <p class="section-sub">Farmacéuticos certificados con vocación de servicio y atención personalizada.</p>
+      </div>
+
+      <div class="row align-items-center g-5">
+
+        <!-- Imagen grupal -->
+        <div class="col-lg-5">
+          <div class="team-img-wrap">
+            <img src="farmacia-assets/equipo.jpg.jpeg" alt="Equipo Farmacias gracias a Dios" class="team-main-img" />
+            <div class="team-img-badge">
+              <i class="bi bi-award-fill"></i>
+              <span>Equipo certificado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjetas del equipo -->
+        <div class="col-lg-7">
+          <div class="row g-3">
+
+            <div class="col-sm-6">
+              <div class="team-card">
+                <div class="team-avatar">
+                  <img src="farmacia-assets/equipo.jpg.jpeg" alt="Dra. Ana Martínez" />
+                </div>
+                <div class="team-info">
+                  <h6 class="team-name">Dra. Ana Martínez</h6>
+                  <span class="team-role">Farmacéutica Jefe</span>
+                  <div class="team-social">
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="team-card">
+                <div class="team-avatar">
+                  <img src="farmacia-assets/equipo.jpg2.jpeg" alt="Dr. Carlos López" />
+                </div>
+                <div class="team-info">
+                  <h6 class="team-name">Dr. Carlos López</h6>
+                  <span class="team-role">Especialista en Nutrición</span>
+                  <div class="team-social">
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="team-card">
+                <div class="team-avatar">
+                  <img src="farmacia-assets/equipo.jpg3.jpeg" alt="Lic. Sara Gómez" />
+                </div>
+                <div class="team-info">
+                  <h6 class="team-name">Lic. Sara Gómez</h6>
+                  <span class="team-role">Auxiliar de Farmacia</span>
+                  <div class="team-social">
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="team-card">
+                <div class="team-avatar team-avatar-default">
+                  <i class="bi bi-person-fill"></i>
+                </div>
+                <div class="team-info">
+                  <h6 class="team-name">Dr. Miguel Herrera</h6>
+                  <span class="team-role">Farmacéutico Clínico</span>
+                  <div class="team-social">
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECCIÓN TESTIMONIOS — Carrusel Bootstrap
+  ═══════════════════════════════════════ -->
+  <section id="opiniones" class="section-pad testimonials-section">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag">Testimonios</span>
+        <h2 class="section-title">Lo que dicen nuestros <em>Clientes</em></h2>
+        <p class="section-sub">La confianza de nuestros pacientes es nuestro mayor reconocimiento.</p>
+      </div>
+
+      <!-- Bootstrap Carousel -->
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
+        <div class="carousel-inner">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="testimonial-card">
+                  <div class="quote-icon"><i class="bi bi-quote"></i></div>
+                  <div class="stars mb-3">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="testimonial-text">"Excelente atención. La farmacéutica me explicó perfectamente cómo tomar mi medicación y me resolvió todas las dudas con mucha paciencia. Sin duda, la mejor farmacia del barrio."</p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div>
+                      <strong>María Rodríguez</strong>
+                      <span>Cliente desde 2018</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="testimonial-card">
+                  <div class="quote-icon"><i class="bi bi-quote"></i></div>
+                  <div class="stars mb-3">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="testimonial-text">"Siempre encuentro todo lo que necesito y a precios muy competitivos. El personal es muy amable y profesional. Llevo años siendo cliente y nunca me han fallado."</p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">JL</div>
+                    <div>
+                      <strong>Jorge Luis Peña</strong>
+                      <span>Cliente desde 2020</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="testimonial-card">
+                  <div class="quote-icon"><i class="bi bi-quote"></i></div>
+                  <div class="stars mb-3">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                  </div>
+                  <p class="testimonial-text">"Me asesoraron sobre suplementos para mi madre mayor y la diferencia fue notable. Son expertos de verdad, no solo te venden el producto más caro. Totalmente recomendable."</p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">SV</div>
+                    <div>
+                      <strong>Sofía Vargas</strong>
+                      <span>Cliente desde 2021</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="testimonial-card">
+                  <div class="quote-icon"><i class="bi bi-quote"></i></div>
+                  <div class="stars mb-3">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="testimonial-text">"Lo mejor es el horario tan amplio y que siempre hay un farmacéutico disponible para consultas. Es genial tener esta tranquilidad cerca de casa. ¡Muchas gracias al equipo!"</p>
+                  <div class="testimonial-author">
+                    <div class="author-avatar">RM</div>
+                    <div>
+                      <strong>Roberto Mendoza</strong>
+                      <span>Cliente desde 2019</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /carousel-inner -->
+
+        <!-- Controls -->
+        <button class="carousel-control-prev carousel-btn-custom" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="carousel-control-next carousel-btn-custom" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators carousel-dots">
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"></button>
+        </div>
+
+      </div><!-- /carousel -->
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FORMULARIO DE REGISTRO DE CLIENTES
+  ═══════════════════════════════════════ -->
+  <section id="registro" class="section-pad registro-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- Texto lateral -->
+        <div class="col-lg-5">
+          <span class="section-tag">Únete</span>
+          <h2 class="section-title mb-4">Regístrate y obtén <em>beneficios</em></h2>
+          <div class="benefit-list">
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="bi bi-percent"></i></div>
+              <div>
+                <strong>Descuentos exclusivos</strong>
+                <p>Hasta 20% en productos seleccionados para clientes registrados.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="bi bi-bell"></i></div>
+              <div>
+                <strong>Alertas de disponibilidad</strong>
+                <p>Te notificamos cuando lleguen tus productos favoritos.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"><i class="bi bi-heart-pulse"></i></div>
+              <div>
+                <strong>Historial de salud</strong>
+                <p>Accede a tu historial de medicamentos en cualquier momento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="col-lg-6 offset-lg-1">
+          <div class="form-card">
+            <h4 class="form-card-title">Crear cuenta gratuita</h4>
+
+            <form id="registroForm" novalidate>
+
+              <!-- Nombre completo -->
+              <div class="mb-4">
+                <label for="nombreCompleto" class="form-label-custom">Nombre completo <span class="text-danger">*</span></label>
+                <div class="input-group-custom">
+                  <i class="bi bi-person input-icon"></i>
+                  <input type="text" id="nombreCompleto" name="nombreCompleto"
+                    class="form-control form-control-custom"
+                    placeholder="Ej: Juan Pérez González" required minlength="3" />
+                </div>
+                <div class="invalid-feedback-custom">Por favor ingresa tu nombre completo.</div>
+              </div>
+
+              <!-- Email (opcional) -->
+              <div class="mb-4">
+                <label for="email" class="form-label-custom">Correo electrónico <span class="text-muted fs-xs">(opcional)</span></label>
+                <div class="input-group-custom">
+                  <i class="bi bi-envelope input-icon"></i>
+                  <input type="email" id="email" name="email"
+                    class="form-control form-control-custom"
+                    placeholder="tu@correo.com" />
+                </div>
+                <div class="invalid-feedback-custom">Por favor ingresa un correo válido.</div>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="mb-4">
+                <label for="telefono" class="form-label-custom">Teléfono <span class="text-danger">*</span></label>
+                <div class="input-group-custom">
+                  <i class="bi bi-telephone input-icon"></i>
+                  <input type="tel" id="telefono" name="telefono"
+                    class="form-control form-control-custom"
+                    placeholder="+1 (555) 000-0000" required pattern="[\d\s\+\-\(\)]{7,15}" />
+                </div>
+                <div class="invalid-feedback-custom">Por favor ingresa un teléfono válido.</div>
+              </div>
+
+              <!-- Checkbox términos -->
+              <div class="mb-4">
+                <div class="d-flex align-items-start gap-2">
+                  <input type="checkbox" id="terminos" class="form-check-input mt-1" required />
+                  <label for="terminos" class="form-check-label text-sm">
+                    Acepto los <a href="#" class="link-azure">Términos y condiciones</a> y la
+                    <a href="#" class="link-azure">Política de privacidad</a>
+                  </label>
+                </div>
+                <div class="invalid-feedback-custom">Debes aceptar los términos para continuar.</div>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="btn btn-form-submit w-100">
+                <i class="bi bi-person-check me-2"></i>Registrarse gratis
+              </button>
+
+            </form>
+
+            <!-- Success message (hidden by default) -->
+            <div id="successMsg" class="success-alert d-none">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              ¡Registro exitoso! Bienvenido a Farmacias gracias a Dios.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECCIÓN CONTACTO
+  ═══════════════════════════════════════ -->
+  <section id="contacto" class="section-pad contact-section">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag">Contáctanos</span>
+        <h2 class="section-title">¿Cómo llegar a <em>nosotros</em>?</h2>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Info cards -->
+        <div class="col-lg-4">
+          <div class="d-flex flex-column gap-3">
+
+            <div class="contact-card">
+              <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <h6>Dirección</h6>
+                <p>Av. Salud 1234, Col. Centro<br />Ciudad de México, CP 06600</p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon contact-icon-blue"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <h6>Teléfonos</h6>
+                <p>
+                  <a href="tel:+525512345678">+52 55 1234-5678</a><br />
+                  <a href="tel:+525587654321">+52 55 8765-4321</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon contact-icon-green"><i class="bi bi-clock-fill"></i></div>
+              <div>
+                <h6>Horario de atención</h6>
+                <p>
+                  Lunes – Viernes: 7:00 – 22:00<br />
+                  Sábado: 8:00 – 20:00<br />
+                  Domingo: 9:00 – 18:00
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon contact-icon-purple"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <h6>Email</h6>
+                <p><a href="mailto:info@Farmacias gracias a Dios.mx">info@Farmacias gracias a Dios.mx</a></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Mapa -->
+        <div class="col-lg-8">
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.4893939070697!2d-99.13660798509406!3d19.432607886889193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sCentro%20Hist%C3%B3rico%2C%20Ciudad%20de%20M%C3%A9xico!5e0!3m2!1ses!2smx!4v1628956427345!5m2!1ses!2smx"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicación Farmacias gracias a Dios">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Columna 1: Marca -->
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="logo-badge logo-badge-sm">
+              <img src="farmacia-assets/logo.png.jpeg" alt="Logo" class="logo-img" />
+            </div>
+            <span class="brand-name brand-name-footer">Farmacias gracias a <strong>Dios</strong></span>
+          </div>
+          <p class="footer-desc">Tu farmacia de confianza. Gran experiencia encuidando de la salud de nuestros clientes con profesionalismo y calidez.</p>
+          <div class="footer-social">
+            <a href="https://wa.me/525512345678" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Columna 2: Links rápidos -->
+        <div class="col-sm-6 col-lg-2 offset-lg-1">
+          <h6 class="footer-heading">Navegación</h6>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#medicamentos">Medicamentos</a></li>
+            <li><a href="#equipo">Nuestro equipo</a></li>
+            <li><a href="#opiniones">Opiniones</a></li>
+            <li><a href="#registro">Registro</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Servicios -->
+        <div class="col-sm-6 col-lg-2">
+          <h6 class="footer-heading">Servicios</h6>
+          <ul class="footer-links">
+            <li><a href="#">Consulta farmacéutica</a></li>
+            <li><a href="#">Medicamentos genéricos</a></li>
+            <li><a href="#">Vitaminas y suplementos</a></li>
+            <li><a href="#">Dermocosmética</a></li>
+            <li><a href="#">Preparados magistrales</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Contacto -->
+        <div class="col-lg-3">
+          <h6 class="footer-heading">Contacto rápido</h6>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <a href="tel:+525512345678">+52 55 1234-5678</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <a href="mailto:info@Farmacias gracias a Dios.mx">info@Farmacias gracias a Dios.mx</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>Av. Salud 1234, CDMX</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock"></i>
+            <span>Lun-Vie: 7:00 – 22:00</span>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom">
+        <p>© 2025 Farmacias gracias a Dios. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos de uso</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════
+       BOTONES FLOTANTES: WhatsApp, FB, IG
+  ═══════════════════════════════════════ -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/584149770374?text=Hola%2C%20quiero%20información%20sobre%20medicamentos"
+       target="_blank" class="fab-btn fab-whatsapp" title="WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+    <a href="https://l.instagram.com/?u=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1G2mbtWYAs%2F%3Fmibextid%3DwwXIfr%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio&e=AT5VAbV8iaV3n9udgOMbcMJimtLypTZ91w4BFPt0WKyPAINTF5fGeowJRzugocJOx15y9ckE7AqnYW676H6NQZ3Ve-DstQQ1qy89WKO0wHVwEtV2-Vf1GXWGlQ" target="_blank" class="fab-btn fab-facebook" title="Facebook">
+      <i class="bi bi-facebook"></i>
+    </a>
+    <a href="https://www.instagram.com/farmaciagraciasadios?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="fab-btn fab-instagram" title="Instagram">
+      <i class="bi bi-instagram"></i>
+    </a>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       MODAL: Consultar medicamento
+  ═══════════════════════════════════════ -->
+  <div class="modal fade" id="consultaModal" tabindex="-1" aria-labelledby="consultaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-custom">
+        <div class="modal-header modal-header-custom">
+          <h5 class="modal-title" id="consultaModalLabel">
+            <i class="bi bi-chat-heart me-2"></i>Consulta sobre medicamento
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="mb-4 text-muted">Nuestro equipo farmacéutico te responderá a la brevedad. Completa el formulario o contáctanos directamente.</p>
+          <div class="mb-3">
+            <label class="form-label-custom">Tu nombre</label>
+            <input type="text" class="form-control form-control-custom" placeholder="Nombre completo" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label-custom">Tu consulta</label>
+            <textarea class="form-control form-control-custom" rows="3" placeholder="Describe tu consulta o duda sobre el medicamento..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer border-0 px-4 pb-4">
+          <a href="https://wa.me/525512345678" target="_blank" class="btn btn-whatsapp me-2">
+            <i class="bi bi-whatsapp me-2"></i>Consultar por WhatsApp
+          </a>
+          <button type="button" class="btn btn-consultar-modal">Enviar consulta</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS: Bootstrap JS
+  ═══════════════════════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ──────────────────────────────────────────
+    // NAVBAR: cambio de estilo al hacer scroll
+    // ──────────────────────────────────────────
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    });
+
+    // ──────────────────────────────────────────
+    // NAV LINKS: smooth scroll + active state
+    // ──────────────────────────────────────────
+    document.querySelectorAll('a.nav-pill[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Cerrar menú mobile
+          const navCollapse = document.getElementById('navMenu');
+          if (navCollapse.classList.contains('show')) {
+            bootstrap.Collapse.getInstance(navCollapse)?.hide();
+          }
+        }
+        // Active link
+        document.querySelectorAll('.nav-pill').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // ──────────────────────────────────────────
+    // FORMULARIO: validación + submit
+    // ──────────────────────────────────────────
+    const form = document.getElementById('registroForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      let valid = true;
+
+      // Validar nombre
+      const nombre = document.getElementById('nombreCompleto');
+      const email = document.getElementById('email');
+      const telefono = document.getElementById('telefono');
+      const terminos = document.getElementById('terminos');
+
+      // Reset
+      [nombre, email, telefono, terminos].forEach(el => el.classList.remove('is-invalid', 'is-valid'));
+
+      if (!nombre.value.trim() || nombre.value.trim().length < 3) {
+        nombre.classList.add('is-invalid'); valid = false;
+      } else nombre.classList.add('is-valid');
+
+      if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.classList.add('is-invalid'); valid = false;
+      } else if (email.value) email.classList.add('is-valid');
+
+      if (!telefono.value.trim() || !/[\d\s\+\-\(\)]{7,15}/.test(telefono.value)) {
+        telefono.classList.add('is-invalid'); valid = false;
+      } else telefono.classList.add('is-valid');
+
+      if (!terminos.checked) {
+        terminos.classList.add('is-invalid'); valid = false;
+      }
+
+      if (valid) {
+        form.classList.add('d-none');
+        successMsg.classList.remove('d-none');
+      }
+    });
+
+    // ──────────────────────────────────────────
+    // INTERSECTION OBSERVER: fade-in on scroll
+    // ──────────────────────────────────────────
+    const observerOpts = { threshold: 0.12 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOpts);
+
+    document.querySelectorAll('.med-card, .team-card, .contact-card, .benefit-item').forEach(el => {
+      el.classList.add('fade-on-scroll');
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
