@@ -63,6 +63,7 @@ a { text-decoration: none; transition: var(--transition); }
 .section-pad { padding: 96px 0; }
 
 
+
 /* ── 2. NAVBAR ──────────────────────────────────────────────── */
 .navbar-custom {
   background: rgba(11, 31, 58, 0.0);
@@ -179,9 +180,19 @@ a { text-decoration: none; transition: var(--transition); }
     width: 450px;
 }
 
+.hero-image {
+    width: 80%;
+    height: 600px; /* ajusta según tu diseño */
+    overflow: hidden;
+}
+
 .hero-image img {
-    width: 100%;
-    height: auto;
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+
+    /* 🔥 AQUÍ MUEVES LA IMAGEN */
+    object-position: 80% center;
 }
 
 .hero-image img{
@@ -346,7 +357,7 @@ a { text-decoration: none; transition: var(--transition); }
   50% { transform: translateX(-50%) translateY(8px); }
 }
 
-
+ 
 /* ── 4. SECTION HEADERS ─────────────────────────────────────── */
 .section-tag {
   display: inline-block;
@@ -537,6 +548,21 @@ a { text-decoration: none; transition: var(--transition); }
 }
 
 .team-img-badge i { font-size: 1rem; }
+
+/* efecto en el equipo de imagenes */
+
+.team-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px); /* Un pequeño brinco al pasar el mouse */
+}
+
+#imagen-grande {
+  transition: opacity 0.3s ease-in-out; /* Para que el cambio de foto no sea brusco */
+}
 
 /* Team cards */
 .team-card {
@@ -1148,7 +1174,7 @@ textarea.form-control-custom {
 .fab-whatsapp  { background: #25D366; }
 .fab-facebook  { background: #1877F2; }
 .fab-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-
+.fab-tiktok { background: #000000; }
 
 /* ── 12. MODAL CUSTOM ───────────────────────────────────────── */
 .modal-custom {
