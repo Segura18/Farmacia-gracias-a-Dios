@@ -83,24 +83,36 @@ a { text-decoration: none; transition: var(--transition); }
 
 /* Logo */
 .logo-badge {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  background: var(--azure);
-  overflow: hidden;
+  width: 104px;
+  height: 104px;
+  /* CORRECCIÓN 1: Fondo transparente para eliminar el cuadrado azul */
+  background: transparent;
+  /* CORRECCIÓN 2: 50% hace que el contenedor sea un círculo perfecto */
+  border-radius: 50%; 
+  /* Mantenemos esto para que recorte la imagen cuadrada en un círculo */
+  overflow: hidden; 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: var(--shadow-azure);
+  /* CORRECCIÓN 3: Cambiamos o quitamos la sombra azul para un acabado más limpio */
+  /* Si quieres una sombra suave, usa esta: */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  /* O si no quieres sombra, coméntala: // box-shadow: none; */
 }
 
-.logo-badge-sm { width: 36px; height: 36px; }
+/* El tamaño pequeño también debe ser transparente y circular */
+.logo-badge-sm { 
+  width: 36px; 
+  height: 36px; 
+  background: transparent;
+  border-radius: 50%;
+}
 
 .logo-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Esto sigue siendo crucial */
 }
 
 .brand-name {
